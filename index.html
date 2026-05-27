@@ -1,0 +1,205 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Second School Classes — Coaching Management System</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="app-shell">
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="Main navigation">
+            <div class="brand">
+                <div class="brand-mark" aria-hidden="true">SS</div>
+                <div class="brand-text">
+                    <div class="brand-title">Second School Classes</div>
+                    <div class="brand-subtitle">Coaching Management System</div>
+                </div>
+            </div>
+
+            <nav class="nav" role="navigation">
+                <button class="nav-item" data-route="dashboard" aria-current="page">
+                    <span class="nav-ico">📊</span>
+                    <span>Dashboard</span>
+                </button>
+
+                <button class="nav-item" data-route="reports">
+                    <span class="nav-ico">🧾</span>
+                    <span>Reports</span>
+                </button>
+
+                <div class="nav-section">Management</div>
+
+                <button class="nav-item" data-route="students">
+                    <span class="nav-ico">👨‍🎓</span>
+                    <span>Students</span>
+                </button>
+                <button class="nav-item" data-route="staff">
+                    <span class="nav-ico">👨‍🏫</span>
+                    <span>Staff</span>
+                </button>
+
+                <button class="nav-item" data-route="curriculum">
+                    <span class="nav-ico">📚</span>
+                    <span>Curriculum</span>
+                </button>
+
+                <div class="nav-section">Academic</div>
+
+                <button class="nav-item" data-route="timetable">
+                    <span class="nav-ico">🗓️</span>
+                    <span>Timetable</span>
+                </button>
+                <button class="nav-item" data-route="attendance">
+                    <span class="nav-ico">✅</span>
+                    <span>Attendance</span>
+                </button>
+                <button class="nav-item" data-route="homework">
+                    <span class="nav-ico">📝</span>
+                    <span>Homework</span>
+                </button>
+                <button class="nav-item" data-route="leave">
+                    <span class="nav-ico">🏖️</span>
+                    <span>Leave & Holidays</span>
+                </button>
+
+                <div class="nav-section">Exams & Results</div>
+
+                <button class="nav-item" data-route="exams">
+                    <span class="nav-ico">📝</span>
+                    <span>Exam Entry</span>
+                </button>
+                <button class="nav-item" data-route="results">
+                    <span class="nav-ico">📈</span>
+                    <span>Results</span>
+                </button>
+                <button class="nav-item" data-route="cards">
+                    <span class="nav-ico">🪪</span>
+                    <span>Certificates & ID</span>
+                </button>
+
+                <div class="nav-section">Finance</div>
+
+                <button class="nav-item" data-route="fees">
+                    <span class="nav-ico">💰</span>
+                    <span>Fees Collection</span>
+                </button>
+                <button class="nav-item" data-route="reminders">
+                    <span class="nav-ico">🔔</span>
+                    <span>Reminders</span>
+                </button>
+
+                <div class="nav-section">HR & Growth</div>
+
+                <button class="nav-item" data-route="payroll">
+                    <span class="nav-ico">👨‍💼</span>
+                    <span>Payroll</span>
+                </button>
+                <button class="nav-item" data-route="performance">
+                    <span class="nav-ico">🏅</span>
+                    <span>Performance</span>
+                </button>
+
+                <div class="nav-section">Communication</div>
+
+                <button class="nav-item" data-route="comms">
+                    <span class="nav-ico">📢</span>
+                    <span>Bulk SMS/WhatsApp</span>
+                </button>
+                <button class="nav-item" data-route="email">
+                    <span class="nav-ico">✉️</span>
+                    <span>Email Campaigns</span>
+                </button>
+                <button class="nav-item" data-route="inbox">
+                    <span class="nav-ico">💬</span>
+                    <span>Inbox</span>
+                </button>
+
+                <div class="nav-section">Custom</div>
+
+                <button class="nav-item" data-route="admissions">
+                    <span class="nav-ico">🧾</span>
+                    <span>Admission Enquiry</span>
+                </button>
+                <button class="nav-item" data-route="custom-fields">
+                    <span class="nav-ico">🧩</span>
+                    <span>Custom Fields</span>
+                </button>
+
+                <div class="nav-section">PTM</div>
+
+                <button class="nav-item" data-route="ptm">
+                    <span class="nav-ico">🤝</span>
+                    <span>PTM Meetings</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
+                <div class="chip">Demo mode</div>
+                <div class="muted" id="lastUpdated"></div>
+            </div>
+        </aside>
+
+        <!-- Main -->
+        <div class="main">
+            <!-- Topbar -->
+            <header class="topbar">
+                <div class="topbar-left">
+                    <button class="icon-btn" id="sidebarToggle" aria-label="Toggle sidebar">☰</button>
+                    <div class="page-title">
+                        <h1 id="pageTitle">Dashboard</h1>
+                        <p class="subtle" id="pageSubtitle">Overview of students, fees, attendance & performance.</p>
+                    </div>
+                </div>
+
+                <div class="topbar-right">
+                    <label class="select" for="academicYear">
+                        <span class="select-label">Academic year</span>
+                        <select id="academicYear" name="academicYear" aria-label="Academic year">
+                            <option value="2024-2025">2024-2025</option>
+                            <option value="2025-2026" selected>2025-2026</option>
+                            <option value="2026-2027">2026-2027</option>
+                        </select>
+                    </label>
+
+                    <div class="search">
+                        <input id="globalSearch" type="search" placeholder="Search students, staff, courses..."
+                            aria-label="Search" />
+                        <span class="search-ico" aria-hidden="true">🔎</span>
+                    </div>
+
+                    <button class="icon-btn" aria-label="Notifications">🔔</button>
+                    <div class="user">
+                        <div class="avatar" aria-hidden="true">A</div>
+                        <div>
+                            <div class="user-name">Admin</div>
+                            <div class="user-role">ERP Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <main id="main" class="content" tabindex="-1">
+                <!-- Dynamic route content injected by script.js -->
+            </main>
+
+            <footer class="footer">
+                <div>© <span id="year"></span> Second School Classes. All rights reserved.</div>
+                <div class="muted">Built with HTML • CSS • JavaScript (Frontend), Node/Express + MongoDB (Backend
+                    planned).</div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
